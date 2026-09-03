@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>초연 시공명리 연구소 | 사주박사</title>
+<meta name="description" content="전통 명리학과 초연 시공명리학을 융합한 정밀 사주풀이. 사주팔자, 재물운, 연애운, 궁합, 택일까지.">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+</style>
+<style>
+  :root {
+    --ink-navy: #6C4DFF;
+    --ink-navy-deep: #4A2FD1;
+    --paper: #F7F5FF;
+    --paper-card: #ffffff;
+    --seal-red: #FF5E7E;
+    --gold: #FFC24B;
+    --text-main: #201A3D;
+    --text-soft: #6B6389;
+    --hairline: #E6E1FA;
+    --night: #17103A;
+    --night-deep: #0D0926;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+    background: var(--paper);
+    color: var(--text-main);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  h1, h2, .serif {
+    font-family: 'GmarketSans', 'Pretendard', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  h3 {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img, svg { display: block; max-width: 100%; }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(247, 243, 234, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  .brand {
+    font-family: 'GmarketSans', 'Pretendard', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--ink-navy);
+    letter-spacing: 0.5px;
+  }
+  .brand span { color: var(--seal-red); }
+  nav.links { display: flex; gap: 28px; font-size: 14.5px; color: var(--text-soft); }
+  nav.links a:hover { color: var(--ink-navy); }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--ink-navy), var(--seal-red));
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .nav-cta:hover { opacity: 0.9; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 100px 28px 96px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(120% 100% at 50% -10%, #2B1F6B 0%, var(--night) 55%, var(--night-deep) 100%);
+    color: #fff;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -140px; left: 50%;
+    width: 720px; height: 720px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(255,94,126,0.22) 0%, rgba(255,94,126,0) 68%);
+    pointer-events: none;
+  }
+  .hero-kicker {
+    font-size: 14.5px;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: 'GmarketSans', 'Pretendard', sans-serif;
+    font-size: clamp(34px, 5.2vw, 54px);
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+    max-width: 760px;
+    margin: 0 auto 26px;
+  }
+  .hero p.lead {
+    max-width: 560px;
+    margin: 0 auto 40px;
+    font-size: 17px;
+    color: #C7C2ED;
+    font-weight: 400;
+  }
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--seal-red), #FF8A5B);
+    color: #fff;
+    padding: 16px 36px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    display: inline-block;
+    box-shadow: 0 10px 28px -8px rgba(255,94,126,0.55);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 30px -8px rgba(255,94,126,0.65); }
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #fff;
+    padding: 15px 32px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.08); }
+  .final-cta .btn-ghost, .final-cta .btn-primary { transition: 0.15s; }
+  .final-cta .btn-ghost { border-color: var(--ink-navy); color: var(--ink-navy); }
+  .final-cta .btn-ghost:hover { background: rgba(108,77,255,0.08); }
+
+  .hero-figures {
+    max-width: 640px;
+    margin: 64px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid rgba(255,255,255,0.14);
+    border-bottom: 1px solid rgba(255,255,255,0.14);
+  }
+  .hero-figures div {
+    padding: 22px 10px;
+    border-left: 1px solid rgba(255,255,255,0.14);
+  }
+  .hero-figures div:first-child { border-left: none; }
+  .hero-figures .num {
+    font-family: 'GmarketSans', 'Pretendard', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--gold);
+  }
+  .hero-figures .label {
+    font-size: 13px;
+    color: #ABA5D6;
+    margin-top: 4px;
+  }
+
+  /* ---------- Section shell ---------- */
+  section { padding: 84px 0; }
+
+  /* ---------- Free hook ---------- */
+  .free-hook { padding: 0 0 84px; }
+  .free-card {
+    background: linear-gradient(135deg, #FFF3D6, #FFE1EA);
+    border-radius: 24px;
+    padding: 44px 32px;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+    box-shadow: 0 20px 44px -22px rgba(255,94,126,0.5);
+  }
+  .free-badge {
+    display: inline-block;
+    background: var(--night);
+    color: var(--gold);
+    font-family: 'GmarketSans', 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .free-card h2 {
+    font-size: clamp(22px, 4vw, 28px);
+    color: var(--night);
+    margin-bottom: 14px;
+  }
+  .free-card p {
+    color: #4A4368;
+    font-size: 15px;
+    margin-bottom: 26px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-head { margin-bottom: 46px; max-width: 620px; }
+  .section-head h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink-navy);
+    margin-bottom: 14px;
+  }
+  .section-head p { color: var(--text-soft); font-size: 15.5px; }
+
+  /* ---------- About / philosophy ---------- */
+  .about {
+    background: var(--paper-card);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .about-copy p { margin-bottom: 16px; color: var(--text-main); font-size: 15.5px; }
+  .about-copy strong { color: var(--ink-navy); font-weight: 700; }
+  .compare3 {
+    border: 1px solid var(--hairline);
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px -20px rgba(108,77,255,0.25);
+    padding: 30px 20px 26px;
+  }
+  .c3-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
+  .c3-col { padding: 6px 4px; border-left: 1px solid var(--hairline); }
+  .c3-col:first-child { border-left: none; }
+  .c3-col.accent { background: rgba(255,94,126,0.06); border-radius: 12px; }
+  .c3-head { font-size: 13px; color: var(--text-soft); font-weight: 600; margin-bottom: 6px; }
+  .c3-num { font-family: 'GmarketSans', 'Pretendard', sans-serif; font-size: 20px; font-weight: 700; color: var(--ink-navy); }
+  .c3-col.accent .c3-num { color: var(--seal-red); }
+  .c3-note {
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--text-soft);
+    margin: 18px 0 10px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--hairline);
+  }
+  .c3-row.big .c3-num-lg {
+    font-family: 'GmarketSans', 'Pretendard', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink-navy);
+    padding: 4px 0;
+  }
+  .c3-row.big .c3-col.accent .c3-num-lg { color: var(--seal-red); }
+  .c3-foot {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline);
+    font-size: 12.5px;
+    color: var(--text-soft);
+    flex-wrap: wrap;
+  }
+  .c3-foot b { color: var(--seal-red); font-weight: 700; }
+
+  /* ---------- Four pillars ---------- */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 20px;
+    border: 1px solid var(--hairline);
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .pillar {
+    padding: 30px 18px;
+    text-align: center;
+    border-left: 1px solid var(--hairline);
+  }
+  .pillar:first-child { border-left: none; }
+  .pillar .hanja { font-family: 'Pretendard', sans-serif; font-size: 30px; color: var(--gold); margin-bottom: 10px; }
+  .pillar .kr { font-weight: 700; font-size: 15px; color: var(--ink-navy); margin-bottom: 6px; }
+  .pillar .desc { font-size: 13px; color: var(--text-soft); }
+
+  /* ---------- Expert intro ---------- */
+  .expert-card {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 16px 40px -24px rgba(108,77,255,0.3);
+  }
+  .expert-photo {
+    flex: 0 0 96px;
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--ink-navy), var(--seal-red));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px;
+  }
+  .expert-eyebrow { font-size: 13px; color: var(--seal-red); font-weight: 700; margin-bottom: 8px; }
+  .expert-info h2 { font-size: 24px; color: var(--ink-navy); margin-bottom: 16px; }
+  .expert-list { list-style: none; }
+  .expert-list li {
+    font-size: 14.5px;
+    color: var(--text-main);
+    padding: 7px 0 7px 20px;
+    position: relative;
+  }
+  .expert-list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 15px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  .expert-list .ph { color: #B0AAD4; font-style: normal; }
+
+  /* ---------- Products / pricing ---------- */
+  .products { }
+  .product-cat { margin-bottom: 36px; }
+  .product-cat h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink-navy);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ink-navy);
+    margin-bottom: 4px;
+  }
+  .product-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 16px 2px;
+    border-bottom: 1px solid var(--hairline);
+    gap: 20px;
+  }
+  .product-row .name { font-size: 15.5px; color: var(--text-main); }
+  .product-row .price { white-space: nowrap; font-size: 14.5px; }
+  .product-row .price .was { color: #a29c8c; text-decoration: line-through; margin-right: 8px; font-size: 13px; }
+  .product-row .price .now { font-family: 'GmarketSans', 'Pretendard', sans-serif; font-weight: 800; color: var(--seal-red); font-size: 17px; }
+
+  /* ---------- Process ---------- */
+  .process {
+    background: radial-gradient(120% 140% at 50% 0%, #2B1F6B 0%, var(--night) 60%, var(--night-deep) 100%);
+    color: #fff;
+  }
+  .process .section-head h2 { color: #fff; font-family: 'GmarketSans', 'Pretendard', sans-serif; }
+  .process .section-head p { color: #ABA5D6; }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .step { position: relative; }
+  .step .n {
+    font-family: 'GmarketSans', 'Pretendard', sans-serif;
+    font-size: 16px;
+    color: var(--night);
+    background: var(--gold);
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .step h4 { font-size: 15.5px; font-weight: 700; margin-bottom: 8px; }
+  .step p { font-size: 13.5px; color: #ABA5D6; }
+
+  /* ---------- Trust ---------- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .trust-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink-navy);
+    margin-bottom: 10px;
+  }
+  .trust-item p { font-size: 14.5px; color: var(--text-soft); }
+
+  /* ---------- Quiet price link ---------- */
+  .price-link-wrap { text-align: center; padding: 0 28px 12px; }
+  .price-link {
+    display: inline-block;
+    font-size: 13.5px;
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--text-soft);
+    padding-bottom: 2px;
+  }
+  .price-link:hover { color: var(--ink-navy); border-color: var(--ink-navy); }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta {
+    text-align: center;
+    background: var(--paper-card);
+    border-top: 1px solid var(--hairline);
+  }
+  .final-cta h2 {
+    font-size: 28px;
+    color: var(--ink-navy);
+    margin-bottom: 16px;
+  }
+  .final-cta p { color: var(--text-soft); margin-bottom: 32px; }
+
+  /* ---------- Channels ---------- */
+  .channels { background: var(--paper-card); border-top: 1px solid var(--hairline); }
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .channel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 10px;
+    border-radius: 16px;
+    border: 1px solid var(--hairline);
+    background: #fff;
+    transition: 0.15s;
+  }
+  .channel-card:hover { transform: translateY(-3px); box-shadow: 0 12px 24px -14px rgba(108,77,255,0.35); }
+  .channel-icon {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'GmarketSans', 'Pretendard', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+  }
+  .channel-card.naver .channel-icon { background: #03C75A; }
+  .channel-card.daum .channel-icon { background: #4A70D6; }
+  .channel-name { font-size: 12.5px; color: var(--text-soft); font-weight: 500; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--night-deep);
+    color: #9089c2;
+    padding: 46px 0 36px;
+    font-size: 13px;
+  }
+  footer .foot-brand {
+    font-family: 'GmarketSans', 'Pretendard', sans-serif;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+  footer .foot-info p { margin-bottom: 4px; }
+  footer .foot-bottom {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    color: #7c81b3;
+  }
+
+  @media (max-width: 760px) {
+    nav.links { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .pillars { grid-template-columns: repeat(2, 1fr); }
+    .pillar:nth-child(3) { border-left: none; }
+    .pillar:nth-child(3), .pillar:nth-child(4) { border-top: 1px solid var(--hairline); }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .trust-grid { grid-template-columns: 1fr; gap: 30px; }
+    .hero-figures { grid-template-columns: 1fr; }
+    .hero-figures div { border-left: none; border-top: 1px solid rgba(255,255,255,0.14); }
+    .hero-figures div:first-child { border-top: none; }
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 0 18px; }
+    .nav-inner { padding: 14px 18px; }
+    .brand { font-size: 17px; }
+    .nav-cta { padding: 8px 16px; font-size: 13px; }
+
+    .hero { padding: 56px 18px 60px; }
+    .hero-kicker { font-size: 13px; margin-bottom: 16px; }
+    .hero h1 { font-size: 28px; line-height: 1.45; margin-bottom: 18px; }
+    .hero p.lead { font-size: 14.5px; margin-bottom: 28px; }
+    .btn-primary, .btn-ghost { width: 100%; padding: 15px 20px; font-size: 15px; }
+    .hero-figures { margin-top: 40px; }
+    .hero-figures div { padding: 16px 6px; }
+    .hero-figures .num { font-size: 22px; }
+    .hero-figures .label { font-size: 11.5px; }
+
+    .free-hook { padding: 0 0 56px; }
+    .free-card { padding: 32px 20px; border-radius: 18px; }
+    .free-card p { font-size: 14px; }
+
+    section { padding: 56px 0; }
+    .section-head h2 { font-size: 23px; }
+    .section-head p { font-size: 14px; }
+
+    .about-copy p { font-size: 14.5px; }
+    .compare3 { padding: 22px 12px 18px; }
+    .c3-num { font-size: 17px; }
+    .c3-row.big .c3-num-lg { font-size: 21px; }
+    .c3-foot { gap: 12px 16px; }
+    .pillar { padding: 20px 10px; }
+    .pillar .hanja { font-size: 24px; }
+
+    .product-cat h3 { font-size: 15px; }
+    .product-row { padding: 13px 2px; gap: 10px; }
+    .product-row .name { font-size: 14px; }
+    .product-row .price .now { font-size: 15.5px; }
+
+    .steps { grid-template-columns: 1fr; gap: 22px; }
+
+    .expert-card { flex-direction: column; text-align: center; padding: 28px 22px; gap: 18px; }
+    .expert-list li { text-align: left; }
+
+    .final-cta h2 { font-size: 22px; }
+    .channel-grid { grid-template-columns: repeat(2, 1fr); }
+    footer { padding: 36px 0 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">초연 시공명리 <span>연구소</span></div>
+    <nav class="links">
+      <a href="#about">시공명리학이 뭐길래</a>
+      <a href="#products">감명 상품</a>
+      <a href="#process">이용 방법</a>
+    </nav>
+    <a class="nav-cta" href="https://choyeon-spacetime.streamlit.app/?mode=order">사주 보러 가기</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-kicker">🔮 전통 명리학 × 초연 시공명리학</div>
+    <h1>생일은 같아도,<br>우주는 다르게 흘러가고 있거든요</h1>
+    <p class="lead">전통 명리학만으로는 다 못 잡아내는 게 있어요. 여기에 초연 시공명리학의 입체적인 시공간 흐름까지 얹으면, 남들이 놓치는 내 사주의 결까지 정밀하게 보여요.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://choyeon-spacetime.streamlit.app/?mode=order">내 사주 확인하기</a>
+    </div>
+    <div class="hero-figures">
+      <div><div class="num">3,600</div><div class="label">시공명리학으로 나뉘는 유형</div></div>
+      <div><div class="num">720</div><div class="label">전통 명리학 기준 유형</div></div>
+      <div><div class="num">5×</div><div class="label">더 촘촘하게 보는 해상도</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="free-hook" id="free">
+  <div class="wrap">
+    <div class="free-card">
+      <div class="free-badge">FREE</div>
+      <h2>일단 생년월일만 넣어봐요, 무료니까</h2>
+      <p>가격 보고 망설이지 마세요. 오행 균형이랑 올해 핵심 키워드는 무료로 먼저 보여드려요. 마음에 들면 그때 정식 감명서로 넘어가시면 돼요.</p>
+      <a class="btn-primary" href="https://choyeon-spacetime.streamlit.app/?mode=order">무료로 먼저 보기</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>초연 시공명리학이 뭐냐면요</h2>
+      <p>같은 날 태어났어도, 5년마다 미묘하게 다른 흐름이 있어요. 초연 시공명리학은 이 작은 차이까지 놓치지 않고 함께 봐드려요.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>기존 사주풀이는 태어난 달을 열두 가지로만 나눠서 봐요. 근데 같은 3월에 태어났어도, 5년마다 한 바퀴씩 돌아오는 시간의 결은 매번 조금씩 달라요.</p>
+        <p><strong>초연 시공명리학</strong>은 이 미세한 시간의 결까지 함께 읽어서, 사주를 3,600가지 유형으로 나눠요. 기존 방식(720가지)보다 다섯 배 더 세밀한 셈이죠.</p>
+        <p>사주팔자라는 기본 뼈대는 그대로 두고, 그 위에 흐르는 시간의 결까지 같이 짚어드리는 것. 초연 시공명리 연구소가 사주를 풀어드리는 방식이에요.</p>
+      </div>
+      <div class="compare3">
+        <div class="c3-row">
+          <div class="c3-col">
+            <div class="c3-head">MBTI</div>
+            <div class="c3-num">16</div>
+          </div>
+          <div class="c3-col">
+            <div class="c3-head">전통 명리</div>
+            <div class="c3-num">12</div>
+          </div>
+          <div class="c3-col accent">
+            <div class="c3-head">시공 명리</div>
+            <div class="c3-num">60</div>
+          </div>
+        </div>
+        <div class="c3-note">태어난 월과 일을 조합한 경우</div>
+        <div class="c3-row big">
+          <div class="c3-col">
+            <div class="c3-num-lg">0</div>
+          </div>
+          <div class="c3-col">
+            <div class="c3-num-lg">720</div>
+          </div>
+          <div class="c3-col accent">
+            <div class="c3-num-lg">3,600</div>
+          </div>
+        </div>
+        <div class="c3-foot">
+          <span>전통 명리와 비교하면 <b>5배</b></span>
+          <span>MBTI와 비교하면 <b>225배</b></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar"><div class="hanja">年</div><div class="kr">태어난 해</div><div class="desc">타고난 뿌리랑 조상운</div></div>
+      <div class="pillar"><div class="hanja">月</div><div class="kr">태어난 달</div><div class="desc">사회생활이랑 부모운</div></div>
+      <div class="pillar"><div class="hanja">日</div><div class="kr">태어난 날</div><div class="desc">진짜 나랑 배우자운</div></div>
+      <div class="pillar"><div class="hanja">時</div><div class="kr">태어난 시간</div><div class="desc">말년이랑 자녀운</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="expert" id="expert">
+  <div class="wrap">
+    <div class="expert-card">
+      <div class="expert-photo">🔮</div>
+      <div class="expert-info">
+        <div class="expert-eyebrow">감명해주시는 분</div>
+        <h2>초연 사주박사 이<span>*</span>호</h2>
+        <ul class="expert-list">
+          <li>명리심리상담사 1급 (한국심리교육협회 KPEI)</li>
+          <li>명리심리상담사 2급 (한국심리교육협회 KPEI)</li>
+          <li>정확한 사주 계산과 따뜻한 사주풀이, 두 가지를 함께 챙깁니다</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>어떤 게 궁금하세요?</h2>
+      <p>필요한 것만 콕 집어 볼 수 있게 나눠봤어요. 종합 풀이부터 테마별 특화 분석까지요.</p>
+    </div>
+
+    <div class="product-cat">
+      <h3>1. 개인 사주팔자 풀이</h3>
+      <div class="product-row"><span class="name">사주팔자 및 총운세 풀이</span><span class="price"><span class="was">22,000원</span><span class="now">11,000원</span></span></div>
+      <div class="product-row"><span class="name">올 해 운세 상세분석</span><span class="price"><span class="was">11,000원</span><span class="now">5,500원</span></span></div>
+      <div class="product-row"><span class="name">이번 달 운세 상세분석</span><span class="price"><span class="was">11,000원</span><span class="now">5,500원</span></span></div>
+      <div class="product-row"><span class="name">주간 및 일일 운세 상세분석</span><span class="price"><span class="was">4,400원</span><span class="now">2,200원</span></span></div>
+    </div>
+
+    <div class="product-cat">
+      <h3>2. 테마별 특성화 상담</h3>
+      <div class="product-row"><span class="name">재물운 특화 분석</span><span class="price"><span class="was">22,000원</span><span class="now">11,000원</span></span></div>
+      <div class="product-row"><span class="name">직업/진학운 특화 분석</span><span class="price"><span class="was">22,000원</span><span class="now">11,000원</span></span></div>
+      <div class="product-row"><span class="name">연애/결혼운 특화 분석</span><span class="price"><span class="was">22,000원</span><span class="now">11,000원</span></span></div>
+      <div class="product-row"><span class="name">건강운 특화 분석</span><span class="price"><span class="was">11,000원</span><span class="now">5,500원</span></span></div>
+      <div class="product-row"><span class="name">이사 및 개업 택일</span><span class="price"><span class="was">11,000원</span><span class="now">5,500원</span></span></div>
+    </div>
+
+    <div class="product-cat">
+      <h3>3. 커플 연애·결혼운 및 택일</h3>
+      <div class="product-row"><span class="name">연애/결혼운(궁합) 풀이</span><span class="price"><span class="was">44,000원</span><span class="now">22,000원</span></span></div>
+      <div class="product-row"><span class="name">결혼 택일 추천</span><span class="price"><span class="was">22,000원</span><span class="now">11,000원</span></span></div>
+      <div class="product-row"><span class="name">출산 택일 추천</span><span class="price"><span class="was">66,000원</span><span class="now">33,000원</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>이용 방법 궁금하시죠</h2>
+      <p>신청부터 감명서 받기까지, 딱 네 단계면 끝나요.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h4>신청서 쓰기</h4>
+        <p>생년월일이랑 궁금한 거 간단히 남겨주세요.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h4>입금 확인</h4>
+        <p>안내된 계좌로 복비 넣어주시면 바로 분석 시작돼요.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h4>정밀 감명</h4>
+        <p>전통 명리랑 시공명리를 같이 반영해서 써 드려요.</p>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <h4>감명서 받기</h4>
+        <p>완성된 감명서, 문자로 바로 받아보실 수 있어요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>이래서 믿고 맡기셔도 돼요</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <h4>사람이 한 번 더 봐요</h4>
+        <p>감명서는 자동으로 만들어진 다음, 꼭 사람이 검수하고 이상하면 다시 써요. 검수 통과한 것만 보내드려요.</p>
+      </div>
+      <div class="trust-item">
+        <h4>평생 소장 가능한 PDF</h4>
+        <p>모든 감명서는 PDF로 안전하게 보관돼서, 나중에 언제든 다시 꺼내보실 수 있어요.</p>
+      </div>
+      <div class="trust-item">
+        <h4>1:1 고민 상담까지</h4>
+        <p>신청할 때 남겨주신 고민에 맞춰서, 언제쯤 풀리는지랑 뭘 하면 좋은지 같이 짚어드려요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="price-link-wrap">
+  <a class="price-link" href="#products">💰 정가 가격표가 궁금하다면 여기서 확인하세요</a>
+</div>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2 class="serif">지금 내 사주, 한번 제대로 들여다볼래요?</h2>
+    <p>신청서 작성은 3분이면 끝나요.</p>
+    <a class="btn-primary" href="https://choyeon-spacetime.streamlit.app/?mode=order">사주 보러 가기</a>
+  </div>
+</section>
+
+<section class="channels">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center; margin: 0 auto 32px;">
+      <h2 style="font-size:22px;">다른 채널에서도 만나요</h2>
+      <p>후기랑 소소한 사주 이야기는 여기서 더 자주 올려드려요.</p>
+    </div>
+    <div class="channel-grid">
+      <a class="channel-card naver" href="#" target="_blank" rel="noopener">
+        <span class="channel-icon">N</span>
+        <span class="channel-name">네이버 블로그</span>
+      </a>
+      <a class="channel-card naver" href="#" target="_blank" rel="noopener">
+        <span class="channel-icon">N</span>
+        <span class="channel-name">네이버 카페</span>
+      </a>
+      <a class="channel-card naver" href="#" target="_blank" rel="noopener">
+        <span class="channel-icon">💬</span>
+        <span class="channel-name">네이버 톡톡</span>
+      </a>
+      <a class="channel-card daum" href="#" target="_blank" rel="noopener">
+        <span class="channel-icon">D</span>
+        <span class="channel-name">다음 카페</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">초연 시공명리 연구소 · 사주박사</div>
+    <div class="foot-info">
+      <p>상호 : 초연 시공명리 연구소</p>
+      <p>대표 : 이*호 | 사업자등록번호 : 373-38-01439</p>
+      <p>소재지 : 충청북도 청주시 서원구</p>
+      <p>문의 : 카카오톡 채널 '사주박사'</p>
+    </div>
+    <div class="foot-bottom">
+      © 초연 시공명리 연구소. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
