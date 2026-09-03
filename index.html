@@ -466,9 +466,9 @@
   .channels { background: var(--paper-card); border-top: 1px solid var(--hairline); }
   .channel-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    max-width: 640px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    max-width: 720px;
     margin: 0 auto;
   }
   .channel-card {
@@ -476,7 +476,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 22px 10px;
+    padding: 20px 8px;
     border-radius: 16px;
     border: 1px solid var(--hairline);
     background: #fff;
@@ -494,7 +494,9 @@
   }
   .channel-card.naver .channel-icon { background: #03C75A; }
   .channel-card.daum .channel-icon { background: #4A70D6; }
-  .channel-name { font-size: 12.5px; color: var(--text-soft); font-weight: 500; }
+  .channel-card.kakao .channel-icon { background: #FEE500; color: #3C1E1E; }
+  .channel-card.email .channel-icon { background: var(--ink-navy); font-size: 16px; }
+  .channel-name { font-size: 12px; color: var(--text-soft); font-weight: 500; text-align: center; }
 
   /* ---------- Footer ---------- */
   footer {
@@ -574,7 +576,7 @@
     .expert-list li { text-align: left; }
 
     .final-cta h2 { font-size: 22px; }
-    .channel-grid { grid-template-columns: repeat(2, 1fr); }
+    .channel-grid { grid-template-columns: repeat(3, 1fr); }
     footer { padding: 36px 0 28px; }
   }
 </style>
@@ -613,9 +615,9 @@
   <div class="wrap">
     <div class="free-card">
       <div class="free-badge">FREE</div>
-      <h2>일단 생년월일만 넣어봐요, 무료니까</h2>
-      <p>가격 보고 망설이지 마세요. 오행 균형이랑 올해 핵심 키워드는 무료로 먼저 보여드려요. 마음에 들면 그때 정식 감명서로 넘어가시면 돼요.</p>
-      <a class="btn-primary" href="https://choyeon-spacetime.streamlit.app/?mode=order">무료로 먼저 보기</a>
+      <h2>주간운세, 일단 무료로 받아봐요</h2>
+      <p>가격 보고 망설이지 마세요. "주간/일일 운세 풀이" 감명서를 완전 무료로 먼저 보내드려요. 마음에 들면 그때 정식 감명서로 넘어가시면 돼요.</p>
+      <a class="btn-primary" href="https://choyeon-spacetime.streamlit.app/?mode=order">무료 주간운세 받기</a>
     </div>
   </div>
 </section>
@@ -681,7 +683,7 @@
       <div class="expert-photo">🔮</div>
       <div class="expert-info">
         <div class="expert-eyebrow">감명해주시는 분</div>
-        <h2>초연 사주박사</h2>
+        <h2>초연 사주박사 이<span>*</span>호</h2>
         <ul class="expert-list">
           <li>명리심리상담사 1급 (한국심리교육협회 KPEI)</li>
           <li>명리심리상담사 2급 (한국심리교육협회 KPEI)</li>
@@ -704,7 +706,7 @@
       <div class="product-row"><span class="name">사주팔자 및 총운세 풀이</span><span class="price"><span class="was">22,000원</span><span class="now">11,000원</span></span></div>
       <div class="product-row"><span class="name">올 해 운세 상세분석</span><span class="price"><span class="was">11,000원</span><span class="now">5,500원</span></span></div>
       <div class="product-row"><span class="name">이번 달 운세 상세분석</span><span class="price"><span class="was">11,000원</span><span class="now">5,500원</span></span></div>
-      <div class="product-row"><span class="name">주간 및 일일 운세 상세분석</span><span class="price"><span class="was">4,400원</span><span class="now">2,200원</span></span></div>
+      <div class="product-row"><span class="name">주간/일일 운세 풀이 <span style="color:var(--seal-red); font-weight:700; font-size:12px;">🎁 무료체험</span></span><span class="price"><span class="was">5,500원</span><span class="now">무료</span></span></div>
     </div>
 
     <div class="product-cat">
@@ -797,21 +799,25 @@
       <p>후기랑 소소한 사주 이야기는 여기서 더 자주 올려드려요.</p>
     </div>
     <div class="channel-grid">
-      <a class="channel-card naver" href="#" target="_blank" rel="noopener">
+      <a class="channel-card kakao" href="http://pf.kakao.com/_xexizSX" target="_blank" rel="noopener">
+        <span class="channel-icon">K</span>
+        <span class="channel-name">카카오톡 채널</span>
+      </a>
+      <a class="channel-card naver" href="https://blog.naver.com/4ju8ja6727" target="_blank" rel="noopener">
         <span class="channel-icon">N</span>
         <span class="channel-name">네이버 블로그</span>
       </a>
-      <a class="channel-card naver" href="#" target="_blank" rel="noopener">
-        <span class="channel-icon">N</span>
-        <span class="channel-name">네이버 카페</span>
-      </a>
-      <a class="channel-card naver" href="#" target="_blank" rel="noopener">
-        <span class="channel-icon">💬</span>
-        <span class="channel-name">네이버 톡톡</span>
-      </a>
-      <a class="channel-card daum" href="#" target="_blank" rel="noopener">
+      <a class="channel-card daum" href="https://cafe.daum.net/bobobs6727" target="_blank" rel="noopener">
         <span class="channel-icon">D</span>
-        <span class="channel-name">다음 카페</span>
+        <span class="channel-name">다음카페 초연박사</span>
+      </a>
+      <a class="channel-card daum" href="https://cafe.daum.net/choyeon-spacetime" target="_blank" rel="noopener">
+        <span class="channel-icon">D</span>
+        <span class="channel-name">다음카페 초연시공명리</span>
+      </a>
+      <a class="channel-card email" href="mailto:boboslee6727@naver.com">
+        <span class="channel-icon">✉️</span>
+        <span class="channel-name">이메일 문의</span>
       </a>
     </div>
   </div>
