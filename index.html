@@ -83,9 +83,9 @@ section { padding: 84px 0; }
 .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 20px; border: 1px solid var(--hairline); border-radius: 20px; overflow: hidden; background: #fff; }
 .pillar { padding: 30px 18px; text-align: center; border-left: 1px solid var(--hairline); }
 .pillar:first-child { border-left: none; }
-.pillar .hanja { font-family: 'Pretendard', sans-serif; font-size: 30px; color: var(--gold); margin-bottom: 10px; }
+.pillar .hanja { font-family: 'Pretendard', sans-serif; font-size: 30px; color: var(--gold); margin-bottom: 10px; line-height: 1.1; }
 .pillar .kr { font-weight: 700; font-size: 15px; color: var(--ink-navy); margin-bottom: 6px; }
-.pillar .desc { font-size: 13px; color: var(--text-soft); }
+.pillar .desc { font-size: 13px; color: var(--text-soft); word-break: keep-all; line-h
 
 /* ---------- Expert intro ---------- */
 .expert-card { display: flex; align-items: center; gap: 36px; background: #fff; border: 1px solid var(--hairline); border-radius: 24px; padding: 40px; box-shadow: 0 16px 40px -24px rgba(108,77,255,0.3); }
@@ -197,7 +197,7 @@ footer .foot-bottom { margin-top: 28px; padding-top: 20px; border-top: 1px solid
 
 <header>
   <div class="nav-inner">
-    <div class="brand">초연 시공명리 <span>연구소</span></div>
+    <div class="brand">초연 시공명리 <span>연구소 · 사주박사</span></div>
     <nav class="links">
       <a href="#about">시공명리학이 뭐길래</a>
       <a href="#products">감명 상품</a>
@@ -272,6 +272,7 @@ footer .foot-bottom { margin-top: 28px; padding-top: 20px; border-top: 1px solid
       <div class="pillar"><div class="hanja">月</div><div class="kr">태어난 달</div><div class="desc">사회생활이랑 부모운</div></div>
       <div class="pillar"><div class="hanja">年</div><div class="kr">태어난 해</div><div class="desc">타고난 뿌리랑 조상운</div></div>
     </div>
+  </div>
 </section>
 
 <section class="expert" id="expert">
@@ -404,23 +405,25 @@ footer .foot-bottom { margin-top: 28px; padding-top: 20px; border-top: 1px solid
       </a>
       <a class="channel-card naver" href="https://blog.naver.com/4ju8ja6727" target="_blank" rel="noopener">
         <span class="channel-icon">N</span>
-        <span class="channel-name">네이버 블로그</span>
+        <span class="channel-name">네이버 블로그 [사주박사]</span>
       </a>
       <a class="channel-card naver" href="https://cafe.naver.com/bluegrayv5i31" target="_blank" rel="noopener">
         <span class="channel-icon">N</span>
-        <span class="channel-name">네이버 카페</span>
+        <span class="channel-name">네이버 카페 [사주박사]</span>
       </a>
       <a class="channel-card daum" href="https://cafe.daum.net/choyeon-spacetime" target="_blank" rel="noopener">
         <span class="channel-icon">D</span>
-        <span class="channel-name">다음 카페</span>
+        <span class="channel-name">다음 카페 [초연사주박사]</span>
       </a>
     </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
     <div class="foot-brand">초연 <span style="color:var(--seal-red);">시공명리</span> 연구소 · 사주박사</div>
     <div class="foot-info">
-      <p>상호 : 초연 시공명리 연구소</p>
+      <p>상호 : 초연 시공명리 연구소 · 사주박사</p>
       <p>대표 : 이 * 호 | 사업자등록번호 : 373-38-01439</p>
       <p>문의 : http://pf.kakao.com/_xexizSX/chat</p>
     </div>
