@@ -78,19 +78,22 @@ section { padding: 84px 0; }
 .c3-foot { display: flex; justify-content: center; gap: 24px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--hairline); font-size: 13px; color: var(--text-soft); flex-wrap: wrap; }
 .c3-foot b { color: var(--seal-red); font-weight: 700; }
 
-/* ---------- Four pillars (PC: 1행 4열 / 모바일: 2행 2열) ---------- */
-.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 860px; margin: 0 auto; border: 1px solid var(--hairline); border-radius: 20px; overflow: hidden; background: #fff; }
-.pillar { padding: 26px 14px; text-align: center; border-left: 1px solid var(--hairline); }
+/* ---------- Four pillars (PC & 모바일 공통: 무조건 1행 4열 유지) ---------- */
+.pillars { display: grid; grid-template-columns: repeat(4, 1fr) !important; gap: 0; max-width: 860px; margin: 0 auto; border: 1px solid var(--hairline); border-radius: 20px; overflow: hidden; background: #fff; }
+.pillar { padding: 24px 8px; text-align: center; border-left: 1px solid var(--hairline); }
 .pillar:first-child { border-left: none; }
-.pillar .hanja { font-family: 'Pretendard', sans-serif; font-size: 28px; color: var(--gold); margin-bottom: 8px; line-height: 1.1; }
-.pillar .kr { font-weight: 700; font-size: 15px; color: var(--ink-navy); margin-bottom: 6px; }
-.pillar .desc { font-size: 13px; color: var(--text-soft); word-break: keep-all; line-height: 1.4; }
+.pillar .hanja { font-family: 'Pretendard', sans-serif; font-size: 26px; color: var(--gold); margin-bottom: 6px; line-height: 1.1; }
+.pillar .kr { font-weight: 700; font-size: 14px; color: var(--ink-navy); margin-bottom: 4px; white-space: nowrap; }
+.pillar .desc { font-size: 12px; color: var(--text-soft); word-break: keep-all; line-height: 1.35; }
 
-/* 📱 모바일 화면 (768px 이하): 2행 2열 (2x2 바둑판 배치) */
+/* 📱 모바일 화면 (768px 및 480px 이하에서도 1x4 고정 및 여백 최적화) */
 @media (max-width: 768px) {
-  .pillars { grid-template-columns: repeat(2, 1fr); }
-  .pillar:nth-child(2n+1) { border-left: none; }
-  .pillar:nth-child(n+3) { border-top: 1px solid var(--hairline); }
+  .pillars { grid-template-columns: repeat(4, 1fr) !important; border-radius: 14px; }
+  .pillar { padding: 16px 4px !important; border-top: none !important; }
+  .pillar:not(:first-child) { border-left: 1px solid var(--hairline) !important; }
+  .pillar .hanja { font-size: 20px !important; margin-bottom: 4px !important; }
+  .pillar .kr { font-size: 12px !important; margin-bottom: 3px !important; }
+  .pillar .desc { font-size: 11px !important; letter-spacing: -0.5px; }
 }
 
 /* ---------- Expert intro ---------- */
