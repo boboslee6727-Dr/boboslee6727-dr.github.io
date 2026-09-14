@@ -83,9 +83,9 @@ section { padding: 84px 0; }
 .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 20px; border: 1px solid var(--hairline); border-radius: 20px; overflow: hidden; background: #fff; }
 .pillar { padding: 30px 18px; text-align: center; border-left: 1px solid var(--hairline); }
 .pillar:first-child { border-left: none; }
-.pillar .hanja { font-family: 'Pretendard', sans-serif; font-size: 30px; color: var(--gold); margin-bottom: 10px; line-height: 1.1; }
+.pillar .hanja { font-family: 'Pretendard', sans-serif; font-size: 30px; color: var(--gold); margin-bottom: 10px; }
 .pillar .kr { font-weight: 700; font-size: 15px; color: var(--ink-navy); margin-bottom: 6px; }
-.pillar .desc { font-size: 13px; color: var(--text-soft); word-break: keep-all; line-h
+.pillar .desc { font-size: 13px; color: var(--text-soft); }
 
 /* ---------- Expert intro ---------- */
 .expert-card { display: flex; align-items: center; gap: 36px; background: #fff; border: 1px solid var(--hairline); border-radius: 24px; padding: 40px; box-shadow: 0 16px 40px -24px rgba(108,77,255,0.3); }
@@ -149,14 +149,11 @@ footer .foot-brand { font-family: 'GmarketSans', 'Pretendard', sans-serif; color
 footer .foot-info p { margin-bottom: 4px; }
 footer .foot-bottom { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12); color: #7c81b3; }
 @media (max-width: 760px) {
-    nav.links { display: none; }
-    .about-grid { grid-template-columns: 1fr; gap: 36px; }
-    .pillars { grid-template-columns: repeat(2, 1fr); }
-    .pillar:nth-child(3) { border-left: none; }
-    .pillar:nth-child(3), .pillar:nth-child(4) { border-top: 1px solid var(--hairline); }
-    .steps { grid-template-columns: 1fr 1fr; }
-    .trust-grid { grid-template-columns: 1fr; gap: 30px; }
-  }
+  nav.links { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .trust-grid { grid-template-columns: 1fr; gap: 30px; }
+}
 @media (max-width: 480px) {
     .wrap { padding: 0 18px; }
     .nav-inner { padding: 14px 18px; }
