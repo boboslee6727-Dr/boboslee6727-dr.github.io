@@ -24,13 +24,12 @@ img, svg { display: block; max-width: 100%; }
 
 /* ---------- Header ---------- */
 header { position: sticky; top: 0; z-index: 50; background: rgba(247, 243, 234, 0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--hairline); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; max-width: 1040px; margin: 0 auto; }
-.brand { font-family: 'GmarketSans', 'Pretendard', sans-serif; font-weight: 800; font-size: 20px; color: var(--ink-navy); letter-spacing: 0.5px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; max-width: 1040px; margin: 0 auto; gap: 16px; }
+.brand { font-family: 'GmarketSans', 'Pretendard', sans-serif; font-weight: 800; font-size: 20px; color: var(--ink-navy); letter-spacing: 0.5px; white-space: nowrap; flex-shrink: 0; }
 .brand span { color: var(--seal-red); }
-nav.links { display: flex; gap: 28px; font-size: 14.5px; color: var(--text-soft); }
+nav.links { display: flex; gap: 20px; font-size: 14.5px; color: var(--text-soft); white-space: nowrap; }
 nav.links a:hover { color: var(--ink-navy); }
-.nav-cta { background: linear-gradient(135deg, var(--ink-navy), var(--seal-red)); color: #fff !important; padding: 10px 22px; border-radius: 999px; font-size: 14px; font-weight: 700; }
-.nav-cta:hover { opacity: 0.9; }
+.nav-cta { background: linear-gradient(135deg, var(--ink-navy), var(--seal-red)); color: #fff !important; padding: 10px 20px; border-radius: 999px; font-size: 14px; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
 
 /* ---------- Hero ---------- */
 .hero { padding: 100px 28px 96px; text-align: center; position: relative; overflow: hidden; background: radial-gradient(120% 100% at 50% -10%, #2B1F6B 0%, var(--night) 55%, var(--night-deep) 100%); color: #fff; }
@@ -62,30 +61,37 @@ section { padding: 84px 0; }
 
 /* ---------- About / philosophy ---------- */
 .about { background: var(--paper-card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-.about-copy p { margin-bottom: 16px; color: var(--text-main); font-size: 15.5px; }
+.about-copy { max-width: 860px; margin: 0 auto 36px; }
+.about-copy p { margin-bottom: 16px; color: var(--text-main); font-size: 15.5px; line-height: 1.8; }
 .about-copy strong { color: var(--ink-navy); font-weight: 700; }
-.compare3 { border: 1px solid var(--hairline); background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 40px -20px rgba(108,77,255,0.25); padding: 30px 20px 26px; }
+
+/* 비교 카드 (설명 글 아래 중앙 정렬 배치) */
+.compare3 { max-width: 680px; margin: 0 auto 40px; border: 1px solid var(--hairline); background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 40px -20px rgba(108,77,255,0.25); padding: 26px 20px 22px; }
+.c3-note { text-align: center; font-size: 13px; color: var(--text-soft); margin-bottom: 16px; }
 .c3-row { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; }
-.c3-col { padding: 6px 4px; border-left: 1px solid var(--hairline); }
+.c3-col { padding: 8px 4px; border-left: 1px solid var(--hairline); }
 .c3-col:first-child { border-left: none; }
 .c3-col.accent { background: rgba(255,94,126,0.06); border-radius: 12px; }
 .c3-head { font-size: 13px; color: var(--text-soft); font-weight: 600; margin-bottom: 6px; }
-.c3-num { font-family: 'GmarketSans', 'Pretendard', sans-serif; font-size: 20px; font-weight: 700; color: var(--ink-navy); }
-.c3-col.accent .c3-num { color: var(--seal-red); }
-.c3-note { text-align: center; font-size: 12.5px; color: var(--text-soft); margin: 18px 0 10px; padding-top: 14px; border-top: 1px dashed var(--hairline); }
-.c3-row.big .c3-num-lg { font-family: 'GmarketSans', 'Pretendard', sans-serif; font-size: 26px; font-weight: 700; color: var(--ink-navy); padding: 4px 0; }
-.c3-row.big .c3-col.accent .c3-num-lg { color: var(--seal-red); }
-.c3-foot { display: flex; justify-content: center; gap: 22px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--hairline); font-size: 12.5px; color: var(--text-soft); flex-wrap: wrap; }
+.c3-row .c3-num-lg { font-family: 'GmarketSans', 'Pretendard', sans-serif; font-size: 26px; font-weight: 700; color: var(--ink-navy); padding: 4px 0; }
+.c3-row .c3-col.accent .c3-num-lg { color: var(--seal-red); }
+.c3-foot { display: flex; justify-content: center; gap: 24px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--hairline); font-size: 13px; color: var(--text-soft); flex-wrap: wrap; }
 .c3-foot b { color: var(--seal-red); font-weight: 700; }
 
-/* ---------- Four pillars ---------- */
-.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 20px; border: 1px solid var(--hairline); border-radius: 20px; overflow: hidden; background: #fff; }
-.pillar { padding: 30px 18px; text-align: center; border-left: 1px solid var(--hairline); }
+/* ---------- Four pillars (PC: 1행 4열 / 모바일: 2행 2열) ---------- */
+.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 860px; margin: 0 auto; border: 1px solid var(--hairline); border-radius: 20px; overflow: hidden; background: #fff; }
+.pillar { padding: 26px 14px; text-align: center; border-left: 1px solid var(--hairline); }
 .pillar:first-child { border-left: none; }
-.pillar .hanja { font-family: 'Pretendard', sans-serif; font-size: 30px; color: var(--gold); margin-bottom: 10px; }
+.pillar .hanja { font-family: 'Pretendard', sans-serif; font-size: 28px; color: var(--gold); margin-bottom: 8px; line-height: 1.1; }
 .pillar .kr { font-weight: 700; font-size: 15px; color: var(--ink-navy); margin-bottom: 6px; }
-.pillar .desc { font-size: 13px; color: var(--text-soft); }
+.pillar .desc { font-size: 13px; color: var(--text-soft); word-break: keep-all; line-height: 1.4; }
+
+/* 📱 모바일 화면 (768px 이하): 2행 2열 (2x2 바둑판 배치) */
+@media (max-width: 768px) {
+  .pillars { grid-template-columns: repeat(2, 1fr); }
+  .pillar:nth-child(2n+1) { border-left: none; }
+  .pillar:nth-child(n+3) { border-top: 1px solid var(--hairline); }
+}
 
 /* ---------- Expert intro ---------- */
 .expert-card { display: flex; align-items: center; gap: 36px; background: #fff; border: 1px solid var(--hairline); border-radius: 24px; padding: 40px; box-shadow: 0 16px 40px -24px rgba(108,77,255,0.3); }
@@ -233,41 +239,51 @@ footer .foot-bottom { margin-top: 28px; padding-top: 20px; border-top: 1px solid
       <p>같은 달에 태어났어도, 5년마다 시간의 결은 완전히 달라집니다.</p> 
       <p>초연 시공명리학은 그 미세한 시공간의 파동까지 정밀하게 읽어냅니다.</p>
     </div>
-    <div class="about-grid">
-      <div class="about-copy">
-        <p>기존 사주풀이는 태어난 달을 단순히 12개의 월(月)로만 구분합니다. 하지만 같은 인월(寅月)이라도 갑인(甲寅), 병인(丙寅), 무인(戊寅), 경인(庚寅), 임인(壬寅)처럼 5년 주기로 시간의 결이 달라집니다.</p>
-        <p><strong>초연 시공명리학</strong>은 60갑자 월령의 입체적 파동을 분석하여, 월(月)과 일(日)의 조합만으로도 <strong>3,600가지 유형</strong>으로 정밀하게 분류합니다. 기존 전통 방식(720가지)보다 <strong>5배 더 세밀한 설계</strong>입니다.</p>
-        <p>16가지 성격 유형으로 나뉘는 MBTI와 비교하면 <strong>무려 225배 더 정교한 나만의 인생 좌표</strong>를 제시합니다.</p>
-        <p><strong>초연 시공명리 연구소 · 사주박사</strong>는 정통 명리의 단단한 뼈대 위에 현대적인 시공간 동역학을 결합하여, 내 삶의 타이밍과 현실적 해법을 가장 명쾌하게 밝혀드립니다.</p>
+    <section class="about" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>초연 시공명리학이란</h2>
+      <p>같은 달에 태어났어도, 5년마다 시간의 결은 완전히 달라집니다.</p> 
+      <p>초연 시공명리학은 그 미세한 시공간의 파동까지 정밀하게 읽어냅니다.</p>
+    </div>
+
+    <!-- 1. 설명 글 (가로 전체 폭 활용) -->
+    <div class="about-copy">
+      <p>기존 사주풀이는 태어난 달을 단순히 12개의 월(月)로만 구분합니다. 하지만 같은 인월(寅月)이라도 갑인(甲寅), 병인(丙寅), 무인(戊寅), 경인(庚寅), 임인(壬寅)처럼 5년 주기로 시간의 결이 달라집니다.</p>
+      <p><strong>초연 시공명리학</strong>은 60갑자 월령의 입체적 파동을 분석하여, 월(月)과 일(日)의 조합만으로도 <strong>3,600가지 유형</strong>으로 정밀하게 분류합니다. 기존 전통 방식(720가지)보다 <strong>5배 더 세밀한 설계</strong>입니다.</p>
+      <p>16가지 성격 유형으로 나뉘는 MBTI와 비교하면 <strong>무려 225배 더 정교한 나만의 인생 좌표</strong>를 제시합니다.</p>
+      <p><strong>초연 시공명리 연구소 · 사주박사</strong>는 정통 명리의 단단한 뼈대 위에 현대적인 시공간 동역학을 결합하여, 내 삶의 타이밍과 현실적 해법을 가장 명쾌하게 밝혀드립니다.</p>
+    </div>
+
+    <!-- 2. 설명 글 아래 단독 배치되는 비교 카드 -->
+    <div class="compare3">
+      <div class="c3-note">태어난 월과 일을 조합한 경우</div>
+      <div class="c3-row">
+        <div class="c3-col">
+          <div class="c3-head">MBTI</div>
+          <div class="c3-num-lg">16</div>
+        </div>
+        <div class="c3-col">
+          <div class="c3-head">전통명리</div>
+          <div class="c3-num-lg">720</div>
+        </div>
+        <div class="c3-col accent">
+          <div class="c3-head">시공명리</div>
+          <div class="c3-num-lg">3,600</div>
+        </div>
       </div>
-      <div class="compare3">
-        <div class="c3-note">태어난 월과 일을 조합한 경우</div>
-        <div class="c3-row">
-          <div class="c3-col">
-            <div class="c3-head">MBTI</div>
-            <div class="c3-num-lg">16</div>
-          </div>
-          <div class="c3-col">
-            <div class="c3-head">전통명리</div>
-            <div class="c3-num-lg">720</div>
-          </div>
-          <div class="c3-col accent">
-            <div class="c3-head">시공명리</div>
-            <div class="c3-num-lg">3,600</div>
-          </div>
-        </div>
-        <div class="c3-foot">
-          <span>전통명리와 비교하면 <b>5배</b></span>
-          <span>MBTI와 비교하면 <b>225배</b></span>
-        </div>
+      <div class="c3-foot">
+        <span>전통명리와 비교하면 <b>5배</b></span>
+        <span>MBTI와 비교하면 <b>225배</b></span>
       </div>
     </div>
 
+    <!-- 3. 년월일시 순서 기둥 (PC: 1x4, 모바일: 2x2) -->
     <div class="pillars">
-      <div class="pillar"><div class="hanja">時</div><div class="kr">태어난 시간</div><div class="desc">말년이랑 자녀운</div></div>
-      <div class="pillar"><div class="hanja">日</div><div class="kr">태어난 날</div><div class="desc">나랑 배우자운</div></div>
-      <div class="pillar"><div class="hanja">月</div><div class="kr">태어난 달</div><div class="desc">사회생활이랑 부모운</div></div>
       <div class="pillar"><div class="hanja">年</div><div class="kr">태어난 해</div><div class="desc">타고난 뿌리랑 조상운</div></div>
+      <div class="pillar"><div class="hanja">月</div><div class="kr">태어난 달</div><div class="desc">사회생활이랑 부모운</div></div>
+      <div class="pillar"><div class="hanja">日</div><div class="kr">태어난 날</div><div class="desc">진짜 나랑 배우자운</div></div>
+      <div class="pillar"><div class="hanja">時</div><div class="kr">태어난 시간</div><div class="desc">말년이랑 자녀운</div></div>
     </div>
   </div>
 </section>
