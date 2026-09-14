@@ -122,9 +122,10 @@ section { padding: 84px 0; }
 .process .section-head p { color: #ABA5D6; }
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
 .step { position: relative; }
-.step .n { font-family: 'GmarketSans', 'Pretendard', sans-serif; font-size: 16px; color: var(--night); background: var(--gold); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-.step h4 { font-size: 15.5px; font-weight: 700; margin-bottom: 8px; }
-.step p { font-size: 13.5px; color: #ABA5D6; }
+.step-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.step .n { font-family: 'GmarketSans', 'Pretendard', sans-serif; font-size: 16px; color: var(--night); background: var(--gold); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step h4 { font-size: 16px; font-weight: 700; color: #ffffff; margin: 0; }
+.step p { font-size: 14px; color: #ffffff; line-height: 1.5; opacity: 0.95; }
 
 /* ---------- Trust ---------- */
 .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
@@ -328,23 +329,31 @@ footer .foot-bottom { margin-top: 28px; padding-top: 20px; border-top: 1px solid
     </div>
     <div class="steps">
       <div class="step">
-        <div class="n">1</div>
-        <h4>신청서 쓰기</h4>
+        <div class="step-header">
+          <div class="n">1</div>
+          <h4>신청서 쓰기</h4>
+        </div>
         <p>생년월일이랑 궁금한 거 간단히 남겨주세요.</p>
       </div>
       <div class="step">
-        <div class="n">2</div>
-        <h4>입금 확인</h4>
+        <div class="step-header">
+          <div class="n">2</div>
+          <h4>입금 확인</h4>
+        </div>
         <p>안내된 계좌로 복비 넣어주시면 바로 분석 시작돼요.</p>
       </div>
       <div class="step">
-        <div class="n">3</div>
-        <h4>정밀 감명</h4>
+        <div class="step-header">
+          <div class="n">3</div>
+          <h4>정밀 감명</h4>
+        </div>
         <p>전통 명리랑 시공명리를 같이 반영해서 써 드려요.</p>
       </div>
       <div class="step">
-        <div class="n">4</div>
-        <h4>감명서 받기</h4>
+        <div class="step-header">
+          <div class="n">4</div>
+          <h4>감명서 받기</h4>
+        </div>
         <p>완성된 감명서, 문자로 바로 받아보실 수 있어요.</p>
       </div>
     </div>
